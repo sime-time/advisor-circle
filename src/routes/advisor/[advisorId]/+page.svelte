@@ -37,9 +37,9 @@
       <div class="text-center">
         <h1 class="text-2xl font-bold mb-4">Advisor not found</h1>
         <Button>
-          <a href="/explore">
+          <a href="/browse">
             <ArrowLeft class="mr-2 h-4 w-4" />
-            <span>Back to Explore</span>
+            <span>Back to Browse</span>
           </a>
         </Button>
       </div>
@@ -50,9 +50,9 @@
     <main class="flex-grow">
       <div class="container mx-auto px-4 py-8">
         <Button variant="ghost" class="mb-6">
-          <a href="/explore" class="flex flex-row items-center">
+          <a href="/browse" class="flex flex-row items-center">
             <ArrowLeft class="mr-2 h-4 w-4" />
-            <span>Back to Explore</span>
+            <span>Back to Browse</span>
           </a>
         </Button>
         <div class="grid md:grid-cols-3 gap-8">

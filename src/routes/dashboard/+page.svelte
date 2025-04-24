@@ -153,7 +153,7 @@
               </p>
             </div>
             <Button class="bg-tribe-600 hover:bg-tribe-700">
-              <a href="/discover">Add More Advisors</a>
+              <a href="/browse">Add More Advisors</a>
             </Button>
           </div>
 
@@ -242,7 +242,7 @@
                 help you achieve your goals.
               </p>
               <Button class="bg-tribe-600 hover:bg-tribe-700">
-                <a href="/discover">Discover Advisors</a>
+                <a href="/browse">Discover Advisors</a>
               </Button>
             </div>
           {/if}

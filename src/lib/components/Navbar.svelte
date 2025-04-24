@@ -19,10 +19,10 @@
     <div class="hidden md:flex items-center gap-8">
       <div class="flex gap-6">
         <a
-          href="/explore"
+          href="/browse"
           class="text-foreground/80 hover:text-primary transition-colors"
         >
-          Explore
+          Browse Advisors
         </a>
         <a
           href="/dashboard"
@@ -55,11 +55,11 @@
     <div class="md:hidden px-4 py-4 border-t bg-background">
       <div class="flex flex-col gap-4">
         <a
-          href="/explore"
+          href="/browse"
           class="px-2 py-2 text-foreground/80 hover:text-primary transition-colors"
           onclick={() => (menuOpen = false)}
         >
-          Explore
+          Browse Advisors
         </a>
         <a
           href="/dashboard"

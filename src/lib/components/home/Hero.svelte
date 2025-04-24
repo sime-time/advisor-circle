@@ -36,7 +36,7 @@
       </p>
 
       <div class="flex flex-row gap-4 justify-center">
-        <a href="/explore">
+        <a href="/browse">
           <Button
             class="bg-council-purple hover:bg-council-purple-dark text-white px-4 py-3 h-auto text-lg"
           >
