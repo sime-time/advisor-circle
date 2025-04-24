@@ -146,7 +146,7 @@
                       <span>Join Waitlist</span>
                     {:else}
                       <span class="flex items-center">
-                        <Plus class="mr-2 h-4 w-4" /> Add to My Circle
+                        <Plus class="mr-2 h-4 w-4" /> Add to My Tribe
                       </span>
                     {/if}
                   </Button>

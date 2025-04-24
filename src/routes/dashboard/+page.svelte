@@ -101,19 +101,19 @@
       advisorName: "David Kim",
       advisorImage: "https://randomuser.me/api/portraits/men/22.jpg",
       time: "1 week ago",
-      content: "Added to your circle",
+      content: "Added to your tribe",
     },
   ];
 
   const handleRemoveAdvisor = (advisorId: number) => {
     advisors = advisors.filter((advisor) => advisor.id !== advisorId);
 
-    toast.success("Advisor removed from your circle");
+    toast.success("Advisor removed from your tribe");
   };
 </script>
 
 <svelte:head>
-  <title>My Advisor Circle</title>
+  <title>My Advisor Tribe</title>
 </svelte:head>
 
 <div class="min-h-screen flex flex-col">
@@ -128,10 +128,10 @@
     </div>
 
     <div class="container mx-auto px-4 py-8">
-      <Tabs value="circle">
+      <Tabs value="tribe">
         <TabsList class="mb-8 bg-muted/50">
-          <TabsTrigger value="circle" class="px-6 md:px-8 py-2"
-            >Your Circle</TabsTrigger
+          <TabsTrigger value="tribe" class="px-6 md:px-8 py-2"
+            >Your Tribe</TabsTrigger
           >
           <TabsTrigger value="sessions" class="px-6 md:px-8 py-2"
             >Sessions</TabsTrigger
@@ -141,7 +141,7 @@
           >
         </TabsList>
 
-        <TabsContent value="circle">
+        <TabsContent value="tribe">
           <div
             class="mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4"
           >
@@ -149,7 +149,7 @@
               <h2 class="text-2xl font-semibold mb-1">Your Personal Board</h2>
               <p class="text-muted-foreground">
                 {advisors.length} advisor{advisors.length !== 1 ? "s" : ""} in your
-                circle
+                tribe
               </p>
             </div>
             <Button class="bg-tribe-600 hover:bg-tribe-700">
@@ -236,7 +236,7 @@
               >
                 <Users class="h-10 w-10 text-muted-foreground/50" />
               </div>
-              <h3 class="text-xl font-semibold mb-2">Your circle is empty</h3>
+              <h3 class="text-xl font-semibold mb-2">Your tribe is empty</h3>
               <p class="text-muted-foreground mb-6 max-w-md mx-auto">
                 Start building your personal board by adding advisors who can
                 help you achieve your goals.
@@ -323,7 +323,7 @@
         <TabsContent value="activity">
           <div class="mb-8">
             <h2 class="text-2xl font-semibold mb-1">Recent Activity</h2>
-            <p class="text-muted-foreground">Latest updates from your circle</p>
+            <p class="text-muted-foreground">Latest updates from your tribe</p>
           </div>
 
           <div class="space-y-4">

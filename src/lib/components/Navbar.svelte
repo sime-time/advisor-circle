@@ -11,9 +11,9 @@
       <div
         class="h-8 w-8 rounded-full bg-gradient-to-r from-council-purple to-council-blue flex items-center justify-center"
       >
-        <span class="text-white font-bold">AC</span>
+        <span class="text-white font-bold">AT</span>
       </div>
-      <span class="font-bold text-xl">Advisor Circle</span>
+      <span class="font-bold text-xl">Advisor Tribe</span>
     </a>
 
     <div class="hidden md:flex items-center gap-8">

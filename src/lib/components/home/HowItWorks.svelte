@@ -12,7 +12,7 @@
     },
     {
       id: 2,
-      title: "Build your circle",
+      title: "Build your tribe",
       color: "text-red-400",
       description:
         "Add advisors to your personal board based on your needs, goals, and challenges.",
@@ -43,7 +43,7 @@
 >
   <div class="container mx-auto px-4">
     <div class="max-w-3xl mx-auto mb-16 text-center">
-      <h2 class="text-3xl font-bold mb-3">How Advisor Circle Works</h2>
+      <h2 class="text-3xl font-bold mb-3">How Advisor Tribe Works</h2>
       <p class="text-muted-foreground text-lg">
         Your journey to building a powerful personal board of advisors is simple
       </p>

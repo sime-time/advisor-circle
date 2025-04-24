@@ -72,8 +72,9 @@
   <Card class="w-full max-w-md">
     <CardHeader class="text-center">
       <CardTitle class="text-2xl font-bold">Create an account</CardTitle>
-      <CardDescription>Sign up to get started with Mentor Tribe</CardDescription
-      >
+      <CardDescription>
+        Sign up to get started with Advisor Tribe
+      </CardDescription>
     </CardHeader>
     <CardContent>
       <form onsubmit={handleSignup} class="space-y-6">

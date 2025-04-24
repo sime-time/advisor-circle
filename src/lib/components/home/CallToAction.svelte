@@ -7,7 +7,7 @@
 >
   <div class="container mx-auto text-center">
     <h2 class="text-3xl md:text-4xl font-bold mb-4">
-      Ready to Build Your Advisor Circle?
+      Ready to Build Your Advisor Tribe?
     </h2>
     <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-90">
       Join thousands of professionals who are leveraging collective wisdom to

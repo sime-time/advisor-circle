@@ -13,9 +13,9 @@
           <div
             class="h-8 w-8 rounded-full bg-gradient-to-r from-council-purple to-council-blue flex items-center justify-center"
           >
-            <span class="text-white font-bold">AC</span>
+            <span class="text-white font-bold">AT</span>
           </div>
-          <span class="font-bold text-xl">Advisor Circle</span>
+          <span class="font-bold text-xl">Advisor Tribe</span>
         </a>
         <p class="text-gray-600 dark:text-gray-400 mb-4 max-w-xs">
           Build your personal board of advisors to navigate life's challenges
@@ -53,18 +53,18 @@
         <ul class="space-y-2">
           <li>
             <a
-              href="/explore"
+              href="/browse"
               class="text-gray-600 dark:text-gray-400 hover:text-council-purple dark:hover:text-council-purple-light"
             >
-              Explore Advisors
+              Browse Advisors
             </a>
           </li>
           <li>
             <a
-              href="/categories"
+              href="/dashboard"
               class="text-gray-600 dark:text-gray-400 hover:text-council-purple dark:hover:text-council-purple-light"
             >
-              Categories
+              Manage my Tribe
             </a>
           </li>
           <li>
@@ -152,7 +152,7 @@
     </div>
     <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
       <p class="text-gray-500 dark:text-gray-400 text-sm text-center">
-        &copy; {currentYear} AdvisorCouncil. All rights reserved.
+        &copy; {currentYear} Advisor Tribe. All rights reserved.
       </p>
     </div>
   </div>
