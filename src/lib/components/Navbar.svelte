@@ -22,13 +22,13 @@
           href="/browse"
           class="text-foreground/80 hover:text-primary transition-colors"
         >
-          Browse Advisors
+          Browse
         </a>
         <a
           href="/dashboard"
           class="text-foreground/80 hover:text-primary transition-colors"
         >
-          Dashboard
+          My Tribe
         </a>
       </div>
 
@@ -66,7 +66,7 @@
           class="px-2 py-2 text-foreground/80 hover:text-primary transition-colors"
           onclick={() => (menuOpen = false)}
         >
-          Dashboard
+          My Tribe
         </a>
         <div class="flex flex-col gap-2 pt-2">
           <Button variant="outline">

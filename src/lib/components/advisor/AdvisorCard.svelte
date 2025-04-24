@@ -11,13 +11,14 @@
   import toast from "svelte-5-french-toast";
   import { categories, type Advisor } from "$lib/data/advisorData";
 
-  let { advisor }: { advisor: Advisor } = $props();
-  const onAddAdvisor = (id: number) => {
-    return null;
-  };
-
-  let isAdded = $state<boolean>(false);
-  let isWaitlisted = $state<boolean>(false);
+  interface AdvisorCardProps {
+    advisor: Advisor;
+    isAdded: boolean;
+    isWaitlisted: boolean;
+    onAddAdvisor: (id: number) => void;
+  }
+  let { advisor, isAdded, isWaitlisted, onAddAdvisor }: AdvisorCardProps =
+    $props();
 
   function handleWaitlist() {
     isWaitlisted = true;
@@ -64,10 +65,7 @@
 
     <div class="flex flex-wrap gap-2 mb-4">
       {#each advisor.categories as category}
-        <Badge
-          variant="secondary"
-          class="bg-soft-purple text-dark-purple hover:bg-soft-purple/80"
-        >
+        <Badge variant="secondary">
           {categories.get(category || 0)}
         </Badge>
       {/each}
