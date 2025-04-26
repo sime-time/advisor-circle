@@ -11,10 +11,9 @@
     CardTitle,
   } from "$lib/components/ui/card";
   import toast from "svelte-5-french-toast";
-  //import { goto } from "$app/navigation";
-  //import { supabase } from "$lib/integrations/supabase/client";
+  import { goto } from "$app/navigation";
+  import { authClient } from "$lib/auth-client";
   import GoogleLoginButton from "$lib/components/auth/GoogleLoginButton.svelte";
-  import "@lucide/svelte";
   import {
     Eye,
     EyeOff,
@@ -22,15 +21,17 @@
     Lock,
     Lightbulb,
     GraduationCap,
+    User,
   } from "@lucide/svelte";
 
-  let email = "";
-  let password = "";
-  let confirmPassword = "";
-  let showPassword = false;
-  let showConfirmPassword = false;
-  let isLoading = false;
-  let userType = "user";
+  let name = $state("");
+  let email = $state("");
+  let password = $state("");
+  let confirmPassword = $state("");
+  let showPassword = $state(false);
+  let showConfirmPassword = $state(false);
+  let isLoading = $state(false);
+  let userType = $state("user");
 
   async function handleSignup(e: Event) {
     e.preventDefault();
@@ -39,20 +40,15 @@
       return;
     }
     isLoading = true;
-    /*
     try {
-      const { error } = await supabase.auth.signUp({
+      const { data, error } = await authClient.signUp.email({
         email,
         password,
-        options: {
-          data: {
-            user_type: userType,
-          },
-        },
+        name,
       });
 
       if (error) {
-        toast.error(error.message);
+        toast.error(error.message || "Sign up error. Please try again.");
       } else {
         toast.success(
           "Account created successfully! Please check your email to confirm your account.",
@@ -64,7 +60,6 @@
     } finally {
       isLoading = false;
     }
-      */
   }
 </script>
 
@@ -107,6 +102,22 @@
                 I want to mentor others
               </p>
             </Label>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <Label for="name">Name</Label>
+          <div class="relative">
+            <Input
+              id="name"
+              type="text"
+              placeholder="Enter your full name"
+              bind:value={name}
+              required
+              class="pl-10"
+            />
+            <User
+              class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 h-5 w-5"
+            />
           </div>
         </div>
         <div class="space-y-2">

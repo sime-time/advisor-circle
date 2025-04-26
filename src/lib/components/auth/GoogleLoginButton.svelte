@@ -1,28 +1,24 @@
 <script lang="ts">
   import { Button } from "$lib/components/ui/button";
-  //import { supabase } from "$lib/integrations/supabase/client";
-  //import toast from "svelte-5-french-toast";
+  import { authClient } from "$lib/auth-client";
+  import toast from "svelte-5-french-toast";
 
   async function handleGoogleLogin() {
-    /*
     try {
-      const { error } = await supabase.auth.signInWithOAuth({
-        provider: 'google',
-        options: {
-          redirectTo: `${window.location.origin}/auth/callback`
-        }
+      const { data, error } = await authClient.signIn.social({
+        provider: "google",
       });
+
+      console.log("data:", data);
 
       if (error) {
         toast.error("Failed to sign in with Google");
         console.error("Google sign in error:", error);
       }
-    } catch (error) {
+    } catch (err) {
       toast.error("An unexpected error occurred");
-      console.error("Google sign in error:", error);
+      console.error("Google sign in error:", err);
     }
-      */
-    console.log("something happened with google");
   }
 </script>
 
