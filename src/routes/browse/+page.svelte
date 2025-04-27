@@ -1,14 +1,6 @@
 <script lang="ts">
   import AdvisorList from "$lib/components/advisor/AdvisorList.svelte";
-  import { categories, advisors } from "$lib/data/advisorData";
-  import toast from "svelte-5-french-toast";
-
-  function handleAddAdvisor(advisorId: number) {
-    toast.success("Advisor added to your tribe!");
-  }
-  function onClearFilters() {
-    toast.success("Filters cleared");
-  }
+  import { advisors } from "$lib/data/advisorData";
 </script>
 
 <div class="min-h-screen flex flex-col">
@@ -25,12 +17,7 @@
 
     <div class="container mx-auto px-4 py-8">
       <div class="flex flex-col lg:flex-row gap-8">
-        <AdvisorList
-          {advisors}
-          addedAdvisors={[]}
-          onAddAdvisor={handleAddAdvisor}
-          {onClearFilters}
-        />
+        <AdvisorList {advisors} addedAdvisors={[]} />
       </div>
     </div>
   </main>

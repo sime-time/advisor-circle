@@ -7,12 +7,9 @@
   interface ListProps {
     advisors: Advisor[];
     addedAdvisors: number[];
-    onAddAdvisor: (id: number) => void;
-    onClearFilters: () => void;
   }
 
-  let { advisors, addedAdvisors, onAddAdvisor, onClearFilters }: ListProps =
-    $props();
+  let { advisors, addedAdvisors }: ListProps = $props();
 </script>
 
 <div>
@@ -27,9 +24,7 @@
       <p class="text-muted-foreground mb-6">
         Try adjusting your filters or search terms to find more advisors.
       </p>
-      <Button variant="outline" onclick={onClearFilters}>
-        Clear all filters
-      </Button>
+      <Button variant="outline">Clear all filters</Button>
     </div>
   {:else}
     <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -38,7 +33,6 @@
           {advisor}
           isAdded={addedAdvisors.includes(advisor.id)}
           isWaitlisted={false}
-          {onAddAdvisor}
         />
       {/each}
     </div>

@@ -80,6 +80,8 @@ const config: Config = {
           800: '#591db2',
           900: '#4b1c8f',
         },
+        'soft-purple': '#E5DEFF',
+        'dark-purple': '#1A1F2C',
       },
       borderRadius: {
         xl: "calc(var(--radius) + 4px)",

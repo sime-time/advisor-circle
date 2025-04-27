@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Star, Check, Plus, MapPin } from "@lucide/svelte";
+  import { Star, Check, Plus, MapPin, ListPlus } from "@lucide/svelte";
   import {
     Avatar,
     AvatarFallback,
@@ -15,14 +15,18 @@
     advisor: Advisor;
     isAdded: boolean;
     isWaitlisted: boolean;
-    onAddAdvisor: (id: number) => void;
   }
-  let { advisor, isAdded, isWaitlisted, onAddAdvisor }: AdvisorCardProps =
-    $props();
+
+  let { advisor, isAdded, isWaitlisted }: AdvisorCardProps = $props();
 
   function handleWaitlist() {
     isWaitlisted = true;
     toast.success("Added to waitlist!");
+  }
+
+  function handleAddAdvisor(id: number) {
+    isAdded = true;
+    toast.success("Advisor added to your tribe!");
   }
 </script>
 
@@ -79,7 +83,7 @@
         </span>
       </div>
       <div class="text-sm">
-        <span class="font-medium">Status:</span>{" "}
+        <span class="font-medium">Availability:</span>{" "}
         <span
           class={advisor.availability === -1
             ? "text-teal-600"
@@ -94,7 +98,7 @@
 
     <Button
       class={isAdded
-        ? "bg-teal-500 hover:bg-teal-600 w-full"
+        ? "bg-soft-purple text-dark-purple hover:bg-soft-purple/80 w-full"
         : advisor.availability === 0
           ? isWaitlisted
             ? "bg-soft-purple text-dark-purple hover:bg-soft-purple/80 w-full"
@@ -104,7 +108,7 @@
       onclick={() =>
         advisor.availability === 0
           ? handleWaitlist()
-          : onAddAdvisor(advisor.id)}
+          : handleAddAdvisor(advisor.id)}
     >
       {#if isAdded}
         <Check class="mr-2 h-4 w-4" /> Added to Tribe
@@ -112,7 +116,7 @@
         {#if isWaitlisted}
           <Check class="mr-2 h-4 w-4" /> Joined Waitlist
         {:else}
-          Join Waitlist
+          <ListPlus class="mr-2 size-4" /> Join Waitlist
         {/if}
       {:else}
         <Plus class="mr-2 h-4 w-4" /> Add to My Tribe
