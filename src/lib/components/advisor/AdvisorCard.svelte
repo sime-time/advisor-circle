@@ -13,19 +13,13 @@
 
   interface AdvisorCardProps {
     advisor: Advisor;
-    isAdded: boolean;
-    isWaitlisted: boolean;
+    isInvited: boolean;
   }
 
-  let { advisor, isAdded, isWaitlisted }: AdvisorCardProps = $props();
+  let { advisor, isInvited }: AdvisorCardProps = $props();
 
-  function handleWaitlist() {
-    isWaitlisted = true;
-    toast.success("Added to waitlist!");
-  }
-
-  function handleAddAdvisor(id: number) {
-    isAdded = true;
+  function handleInviteAdvisor(id: number) {
+    isInvited = true;
     toast.success("Advisor added to your tribe!");
   }
 </script>
@@ -47,7 +41,6 @@
       <div class="flex items-center gap-1 px-2 py-1 bg-muted rounded-full">
         <Star class="h-4 w-4 fill-tribe-500 text-tribe-500" />
         <span class="font-medium text-sm">{advisor.rating}</span>
-        <span class="text-xs text-muted-foreground">({advisor.reviews})</span>
       </div>
     </div>
 
@@ -77,49 +70,24 @@
 
     <div class="flex justify-between items-center mb-4">
       <div class="text-sm">
-        <span class="font-medium">Price:</span>{" "}
+        <span class="font-medium">Price per month:</span>{" "}
         <span class={advisor.price === 0 ? "text-teal-600" : ""}>
           {advisor.price}
-        </span>
-      </div>
-      <div class="text-sm">
-        <span class="font-medium">Availability:</span>{" "}
-        <span
-          class={advisor.availability === -1
-            ? "text-teal-600"
-            : advisor.availability === 0
-              ? "text-tribe-500"
-              : "text-amber-500"}
-        >
-          {advisor.availability}
         </span>
       </div>
     </div>
 
     <Button
-      class={isAdded
+      class={isInvited
         ? "bg-soft-purple text-dark-purple hover:bg-soft-purple/80 w-full"
-        : advisor.availability === 0
-          ? isWaitlisted
-            ? "bg-soft-purple text-dark-purple hover:bg-soft-purple/80 w-full"
-            : "bg-tribe-200 hover:bg-tribe-300 text-tribe-800 w-full"
-          : "bg-tribe-600 hover:bg-tribe-700 w-full"}
-      disabled={isAdded || isWaitlisted}
-      onclick={() =>
-        advisor.availability === 0
-          ? handleWaitlist()
-          : handleAddAdvisor(advisor.id)}
+        : "bg-tribe-600 hover:bg-tribe-700 w-full"}
+      disabled={isInvited}
+      onclick={() => handleInviteAdvisor(advisor.id)}
     >
-      {#if isAdded}
-        <Check class="mr-2 h-4 w-4" /> Added to Tribe
-      {:else if advisor.availability === 0}
-        {#if isWaitlisted}
-          <Check class="mr-2 h-4 w-4" /> Joined Waitlist
-        {:else}
-          <ListPlus class="mr-2 size-4" /> Join Waitlist
-        {/if}
+      {#if isInvited}
+        <Check class="mr-2 h-4 w-4" /> Invited to Tribe
       {:else}
-        <Plus class="mr-2 h-4 w-4" /> Add to My Tribe
+        <Plus class="mr-2 h-4 w-4" /> Invite to My Tribe
       {/if}
     </Button>
   </CardContent>

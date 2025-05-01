@@ -42,9 +42,9 @@
     isLoading = true;
     try {
       const { data, error } = await authClient.signUp.email({
+        name,
         email,
         password,
-        name,
       });
 
       if (error) {
@@ -53,7 +53,7 @@
         toast.success(
           "Account created successfully! Please check your email to confirm your account.",
         );
-        goto("/login");
+        goto(`/signup/${data.user.id}`);
       }
     } catch (error) {
       toast.error("An unexpected error occurred");
@@ -73,37 +73,6 @@
     </CardHeader>
     <CardContent>
       <form onsubmit={handleSignup} class="space-y-6">
-        <div class="space-y-4">
-          <Label>I want to join as:</Label>
-          <div class="grid grid-cols-2 gap-4">
-            <Label
-              class="flex flex-col items-center justify-center p-4 rounded-lg border-2 cursor-pointer transition-all {userType ===
-              'user'
-                ? 'border-tribe-600 bg-tribe-500/5'
-                : 'border-muted hover:border-tribe-600/50'}"
-              onclick={() => (userType = "user")}
-            >
-              <Lightbulb class="h-8 w-8 mb-2" />
-              <div class="font-medium">Learner</div>
-              <p class="text-sm text-muted-foreground text-center mt-1">
-                I want guidance
-              </p>
-            </Label>
-            <Label
-              class="flex flex-col items-center justify-center p-4 rounded-lg border-2 cursor-pointer transition-all {userType ===
-              'advisor'
-                ? 'border-tribe-600 bg-tribe-500/5'
-                : 'border-muted hover:border-tribe-600/50'}"
-              onclick={() => (userType = "advisor")}
-            >
-              <GraduationCap class="h-8 w-8 mb-2" />
-              <div class="font-medium">Advisor</div>
-              <p class="text-sm text-muted-foreground text-center mt-1">
-                I want to mentor others
-              </p>
-            </Label>
-          </div>
-        </div>
         <div class="space-y-2">
           <Label for="name">Name</Label>
           <div class="relative">
